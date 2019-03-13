@@ -1,6 +1,7 @@
 import csv 
 from selenium import webdriver
 from time import sleep 
+import json
 
 # url_addr = "https://www.zoomit.ir/2019/3/9/313732/national--symbol-introduced/"
 url_addr = input("Please Enter Your interest new link: ")
@@ -85,3 +86,20 @@ for i in range(int(comment_number)):
 
 newses["comments_info"] = comments_info
 print(newses)
+print("#"*30)
+
+json_file = json.dumps(newses)
+with open('file.json', mode='w') as file:
+    file_writer = file.write(json_file)
+
+
+print(json_file)
+print("#"*30)
+
+
+with open('file.csv', mode='w') as file:
+    employee_writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+    employee_writer.writerow(['title', 'author', 'publish_date', 'image_link', 'article_summery', 'article_body', 'comment_number', 'tags', 'relative_topic_list', 'relative_link_list', 'comment_info'])
+    employee_writer.writerow([newses['title'], newses['author'], newses['publish_date'], newses['image_link'], newses['article_summery'], newses['article_body'], newses['comment_number'], newses['tags'], newses['relative_topic_list'], newses['relative_link_list'], newses['comments_info']])
+
