@@ -2,7 +2,8 @@ import csv
 from selenium import webdriver
 from time import sleep 
 
-url_addr = "https://www.zoomit.ir/2019/3/9/313732/national--symbol-introduced/"
+# url_addr = "https://www.zoomit.ir/2019/3/9/313732/national--symbol-introduced/"
+url_addr = input("Please Enter Your interest new link: ")
 
 browser = webdriver.Firefox()
 
