@@ -11,7 +11,7 @@ $ python3 zoomit.py
 ```
 
 TODO:
-- [ ] Extract specific news information 
+- [x] Extract specific news information 
 - [ ] Extract the influence users
 - [ ] Extract the comment text for other analysis
 - [ ] sentiment analysis 
